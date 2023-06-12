@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Flask Project</title>
+
+</head>
+<style>
+    table, th, td {
+    border:1px solid black;
+  </style>
+  <body style="background-color:powderblue;">
+
+  <h1 style="text-align:center;color:rgb(0, 0, 255)">Contact List</h1>
+    <form style="<b>" method="post" action="/" >
+        <label for="fullname">Name:</label>
+        <input type="text" id="fullname" name="fullname">&emsp;
+
+        <label for="mobile">Mobile No:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}">&emsp;
+
+        <label for="email"> Mail:</label>
+        <input type="email" id="email" name="email">&emsp;
+
+        <input type="submit" value="submit">
+        <br><br>
+        <br><br>
+        <br><br>
+
+
+    </form>
+
+        <table style="width:100%">
+            <h2>{{ message }}</h2>
+            <tr style="color:red">
+                <th>Name</th>
+                <th>Mobile</th>
+                <th>Mail</th>
+                <th>Remarks</th>
+            </tr>
+            {%for i in users%}
+                <tr>
+                    <td>{{ i['name'] }}</td>
+                    <td>{{ i["mobile"] }}</td>
+                    <td>{{ i["email"] }} </td>
+                    <td>
+                        <!--<a href ="/delete/{{(i)}}">Delete <br></a>
+                        <a href ="/edit/{{(i)}}">Edit</a> -->
+                    </td>
+                </tr>
+            {%endfor%}
+        </table>
+  </body>
+
+</html>
